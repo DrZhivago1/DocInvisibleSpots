@@ -16,4 +16,8 @@
 
 	</description>
 
+	<loadAfter>
+		<li>dracoix.zars.spots</li>
+	</loadAfter>
+
 </ModMetaData>

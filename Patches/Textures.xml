@@ -67,11 +67,6 @@
   <Operation Class="PatchOperationSequence">
     <success>Always</success>
     <operations>
-      <!--ZARS Spots Compatibility-->
-      <li Class="PatchOperationTest">
-        <xpath>/Defs/DesignatorDropdownGroupDef[defName="ZARS_Spots"]</xpath>
-        <success>Invert</success>
-      </li>
       <!--Make invisible-->
       <li Class="PatchOperationReplace">
         <xpath>/Defs/ThingDef[defName="CraftingSpot" or defName="ButcherSpot"]/graphicData/texPath</xpath>
@@ -96,6 +91,11 @@
           </blueprintGraphicData>
         </value>
       </li>-->
+      <!--ZARS Spots Compatibility-->
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/DesignatorDropdownGroupDef[defName="ZARS_Spots"]</xpath>
+        <success>Invert</success>
+      </li>
       <!--Keep icon in UI-->
       <li Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef[defName="CraftingSpot"]</xpath>
@@ -159,6 +159,97 @@
         <xpath>/Defs/ThingDef[defName="TradingSpot"]</xpath>
         <value>
           <uiIconPath>Things/Building/Misc/PartySpot</uiIconPath>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--==========
+    ZARS Production Spots
+    ==========-->
+
+  <!--New art assets applied:  trading spot-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--Make invisible-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="ZARS_StonecutterSpot" or defName="ZARS_TailoringSpot" or defName="ZARS_ResearchingSpot" or defName="ZARS_SmithingSpot" or defName="ZARS_MachiningSpot" or defName="ZARS_DrugSpot" or defName="ZARS_RefinerySpot" or defName="ZARS_SculptingSpot" or defName="ZARS_ArtSpot" or defName="ZARS_BrewingSpot"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Misc/DZ_InvisibleSpot</texPath>
+        </value>
+      </li>
+      <!--Keep icon in UI-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CraftingSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/CraftingSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ButcherSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/ButcherSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_StonecutterSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/StonecutterSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_TailoringSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/TailoringSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_ResearchingSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/ResearchingSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_SmithingSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/SmithingSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_MachiningSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/MachiningSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_DrugSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/DrugSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_RefinerySpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/RefinerySpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_SculptingSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/SculptingSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_ArtSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/ArtSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ZARS_BrewingSpot"]</xpath>
+        <value>
+          <uiIconPath>ZARS/Spots/BrewingSpot</uiIconPath>
         </value>
       </li>
     </operations>
