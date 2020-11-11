@@ -1,0 +1,115 @@
+﻿<Patch>
+  <!--This file will contain all patches that replace/change textures for Vanilla and Mods-->
+
+  <!--==========
+    Vanilla
+    ==========-->
+
+  <!--New art assets applied:  Marriage Spot, Party Spot, Caravan Packing Spot-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--Make invisible-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="MarriageSpot" or defName="PartySpot" or defName="CaravanPackingSpot"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Misc/DZ_InvisibleSpot</texPath>
+        </value>
+      </li>
+      <!--Add blueprint visibility (wasn't working and got tired of fiddling with it b/c I dont care that much)
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="MarriageSpot"]/building</xpath>
+        <value>
+          <blueprintGraphicData>
+            <texPath>Things/Building/Misc/DZ_Blueprint_PartySpot</texPath>
+          </blueprintGraphicData>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="PartySpot"]/building</xpath>
+        <value>
+          <blueprintGraphicData>
+            <texPath>Things/Building/Misc/DZ_Blueprint_PartySpot</texPath>
+          </blueprintGraphicData>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CaravanPackingSpot"]/building</xpath>
+        <value>
+          <blueprintGraphicData>
+            <texPath>Things/Building/Misc/DZ_Blueprint_MarriageSpot</texPath>
+          </blueprintGraphicData>
+        </value>
+      </li>-->
+      <!--Keep icon in UI-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="MarriageSpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Misc/MarriageSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="PartySpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Misc/PartySpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CaravanPackingSpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Misc/CaravanPackingSpot</uiIconPath>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--New art assets applied:  Crafting Spot, Butcher Spot-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--ZARS Spots Compatibility-->
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/DesignatorDropdownGroupDef[defName="ZARS_Spots"]</xpath>
+        <success>Invert</success>
+      </li>
+      <!--Make invisible-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="CraftingSpot" or defName="ButcherSpot"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Misc/DZ_InvisibleSpot</texPath>
+        </value>
+      </li>
+      <!--Add blueprint visibility (wasn't working and got tired of fiddling with it b/c I dont care that much)
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CraftingSpot"]/building</xpath>
+        <value>
+          <blueprintGraphicData>
+            <texPath>Things/Building/Misc/DZ_Blueprint_PartySpot</texPath>
+          </blueprintGraphicData>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ButcherSpot"]/building</xpath>
+        <value>
+          <blueprintGraphicData>
+            <texPath>Things/Building/Misc/DZ_Blueprint_PartySpot</texPath>
+          </blueprintGraphicData>
+        </value>
+      </li>-->
+      <!--Keep icon in UI-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="CraftingSpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Production/CraftingSpot</uiIconPath>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ButcherSpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Production/ButcherSpot</uiIconPath>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>
