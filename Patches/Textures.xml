@@ -112,4 +112,56 @@
     </operations>
   </Operation>
 
+  <!--==========
+    Trade Ships Drop Spot
+    ==========-->
+
+  <!--New art assets applied:  Drop Spot-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--Make invisible-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="DropSpotTradeShip"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Misc/DZ_InvisibleSpot</texPath>
+        </value>
+      </li>
+      <!--Keep icon in UI-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="DropSpotTradeShip"]</xpath>
+        <value>
+          <uiIconPath>DropSpotMiscIcon</uiIconPath>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--==========
+    Trading Control
+    [KV] Trading Spot
+    (they use the same shit)
+    ==========-->
+
+  <!--New art assets applied:  trading spot-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--Make invisible-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="TradingSpot"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Misc/DZ_InvisibleSpot</texPath>
+        </value>
+      </li>
+      <!--Keep icon in UI-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="TradingSpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Misc/PartySpot</uiIconPath>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
 </Patch>
