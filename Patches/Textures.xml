@@ -113,6 +113,31 @@
   </Operation>
 
   <!--==========
+    Allies Spot
+    ==========-->
+
+  <!--New art assets applied:  allies spot-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--Make invisible-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="AlliesSpot"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Misc/DZ_InvisibleSpot</texPath>
+        </value>
+      </li>
+      <!--Keep icon in UI-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="AlliesSpot"]</xpath>
+        <value>
+          <uiIconPath>Things/Building/Misc/PartySpot</uiIconPath>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--==========
     Trade Ships Drop Spot
     ==========-->
 
